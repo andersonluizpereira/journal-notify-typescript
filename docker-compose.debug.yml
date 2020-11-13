@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  clean-architecture-nodets:
+    image: clean-architecture-nodets
+    build: .
+    environment:
+      NODE_ENV: development
+    ports:
+      - 9222
+      - 9229:9229
+    command: node --inspect=0.0.0.0:9229 dist/main/server.js
