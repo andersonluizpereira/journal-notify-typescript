@@ -1,5 +1,5 @@
 import { mockAuthenticationParams } from '@/domain/test'
-import { LoadAccountByEmailRepositorySpy, HashComparerSpy, EncrypterSpy, UpdateAccessTokenRepositorySpy, throwError } from '../test'
+import { LoadAccountByEmailRepositorySpy, HashComparerSpy, EncrypterSpy, UpdateAccessTokenRepositorySpy, throwError } from '../../test'
 import { DbAuthentication } from './db-authentication'
 
 type SutTypes = {
