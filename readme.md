@@ -1,3 +1,5 @@
+
+![alt text](https://github.com/andersonluizpereira/journal-notify-typescript/tree/master/public/cleanarch.jpg)
 > ## Princípios aplicados
 
 * Single Responsibility Principle (SRP)
