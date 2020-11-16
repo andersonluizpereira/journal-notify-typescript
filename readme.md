@@ -1,3 +1,20 @@
+# Modelo API TDD - Clean Architecture
+
+## Comandos
+| ---------------------------- | --------------------------------- |
+| Comando                      | Descrição                         |
+| ---------------------------- | --------------------------------- |
+| docker-compose up -d         | Subir projeto                     |
+| npm run dev                  | Rodar o projeto com o sucrase-node|
+| npm run build                | Compilar TS > JS                  |
+| npm run start                | Rodar o projeto                   |
+| ---------------------------- | --------------------------------- |
+
+## Used Patterns
+
+- DDD
+- TDD
+- Clean Architecture
 
 ![clean-architecture-nodets](https://github.com/andersonluizpereira/journal-notify-typescript/blob/master/public/img/cleanarch.jpg)
 > ## Princípios aplicados
@@ -77,3 +94,5 @@
 * Deploy no Heroku
 * Uso de breakpoints no Typescript
 * Uso correto de tags no Git
+
+https://khalilstemmler.com/articles/software-design-architecture/organizing-app-logic
