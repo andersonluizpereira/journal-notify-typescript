@@ -13,4 +13,10 @@ export class Account {
 
   @Column()
   password: string
+
+  @Column()
+  accessToken?: string
+
+  @Column()
+  role: string
 }

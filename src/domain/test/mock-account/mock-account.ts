@@ -9,6 +9,14 @@ export const mockAddAccountParams = (): AddAccountParams => ({
   password: faker.internet.password()
 })
 
+export const mockAddAccountParamsModel = (): any => ({
+  name: faker.name.findName(),
+  email: faker.internet.email(),
+  role: faker.random.words(),
+  accessToken: faker.random.uuid(),
+  password: faker.internet.password()
+})
+
 export const mockAccountModel = (): AccountModel => ({
   id: faker.random.uuid(),
   name: faker.name.findName(),

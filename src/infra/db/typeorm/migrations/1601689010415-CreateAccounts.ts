@@ -25,6 +25,16 @@ export class CreateAccounts1601689010415 implements MigrationInterface {
           {
             name: 'password',
             type: 'varchar'
+          },
+          {
+            name: 'accessToken',
+            type: 'varchar',
+            default: '0'
+          },
+          {
+            name: 'role',
+            type: 'varchar',
+            default: "'user'"
           }
         ]
       })

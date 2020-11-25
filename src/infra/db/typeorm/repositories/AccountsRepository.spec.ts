@@ -1,9 +1,9 @@
-import { mockAddAccountParams } from '@/domain/test'
+import { mockAddAccountParamsModel } from '@/domain/test'
 import { Connection, getRepository } from 'typeorm'
 import createConnection from '../connection'
-import { Account } from '../entities/Account'
-import { AccountsRepository } from './AccountsRepository'
 import faker from 'faker'
+import { AccountsRepository } from './AccountsRepository'
+import { Account } from '../entities/Account'
 
 let connection: Connection
 
@@ -30,8 +30,7 @@ describe('AccountsRepository Test', () => {
   describe('create()', () => {
     it('should be able to insert a new account', async () => {
       const sut = makeSut()
-      const addAccountParams = mockAddAccountParams()
-      console.log('addAccountParams', addAccountParams)
+      const addAccountParams = mockAddAccountParamsModel()
       const account = await sut.add(addAccountParams)
 
       expect(account).toBeTruthy()
@@ -53,7 +52,7 @@ describe('AccountsRepository Test', () => {
       const sut = makeSut()
 
       const accountRepository = getRepository(Account)
-      const addAccountParams = mockAddAccountParams()
+      const addAccountParams = mockAddAccountParamsModel()
       const fakeUser = accountRepository.create(addAccountParams)
 
       await accountRepository.save(fakeUser)
@@ -63,6 +62,49 @@ describe('AccountsRepository Test', () => {
       expect(account).toBeTruthy()
       expect(account?.id).toBeTruthy()
       expect(account?.email).toBe(addAccountParams.email)
+    })
+
+    describe('updateAccessToken()', () => {
+      test('Should update the account accessToken on success', async () => {
+        const sut = makeSut()
+        const addAccountParams = mockAddAccountParamsModel()
+        const account = await sut.add(addAccountParams)
+        const fakeAccount = await sut.loadByEmail(account.email)
+        const accessToken = faker.random.uuid()
+        await sut.updateAccessToken(fakeAccount.id, accessToken)
+        const accountModel = await sut.loadByEmail(fakeAccount.email)
+        expect(accountModel).toBeTruthy()
+        expect(accountModel.accessToken).toBe(accessToken)
+      })
+    })
+  })
+  describe('loadByToken()', () => {
+    let name = faker.name.findName()
+    let email = faker.internet.email()
+    let password = faker.internet.password()
+    let role = faker.random.words()
+
+    beforeEach(() => {
+      name = faker.name.findName()
+      email = faker.internet.email()
+      password = faker.internet.password()
+      role = faker.random.words()
+    })
+
+    test('Should return an account on loadByToken without role', async () => {
+      const sut = makeSut()
+      await sut.add({
+        name,
+        email,
+        role,
+        password
+      })
+      const account = await sut.loadByToken(password)
+      expect(account).toBeTruthy()
+      expect(account.id).toBeTruthy()
+      expect(account.name).toBe(name)
+      expect(account.email).toBe(email)
+      expect(account.password).toBe(password)
     })
   })
 })

@@ -1,7 +1,7 @@
 import { AddAccount } from '@/domain/usecases/account/add-account'
 import { BcryptAdapter } from '@/infra/criptografy/bcrypt-adapter/bcrypt-adapter'
 import { DbAddAccount } from '@/data/usecases'
-import { AccountsRepository } from '@/infra/db/typeorm/repositories/AccountsRepository'
+import { AccountsRepository } from '@/infra/db/typeorm/repositories/accountsRepository'
 
 export const makeDbAddAccount = (): AddAccount => {
   const salt = 12

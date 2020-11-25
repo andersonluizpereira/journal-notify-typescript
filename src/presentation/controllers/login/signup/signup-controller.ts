@@ -34,7 +34,7 @@ export class SignUpController implements Controller {
       })
       return ok(authenticationModel)
     } catch (error) {
-      return serverError(error.stack)
+      return serverError(error)
     }
   }
 }
