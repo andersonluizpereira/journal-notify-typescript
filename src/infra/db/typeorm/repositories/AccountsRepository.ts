@@ -2,7 +2,7 @@ import { AddAccountRepository, LoadAccountByEmailRepository, LoadAccountByTokenR
 import { AccountModel } from '@/domain/models'
 import { AddAccountParams } from '@/domain/usecases'
 import { getRepository, Repository } from 'typeorm'
-import { Account } from '../entities/account'
+import { Account } from '@/infra/db/typeorm/entities/account'
 
 export class AccountsRepository
 implements AddAccountRepository, LoadAccountByEmailRepository, LoadAccountByTokenRepository,UpdateAccessTokenRepository {

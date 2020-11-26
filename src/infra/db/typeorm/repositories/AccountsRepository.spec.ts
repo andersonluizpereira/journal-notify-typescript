@@ -2,8 +2,8 @@ import { mockAddAccountParamsModel } from '@/domain/test'
 import { Connection, getRepository } from 'typeorm'
 import createConnection from '../connection'
 import faker from 'faker'
-import { AccountsRepository } from './AccountsRepository'
-import { Account } from '../entities/Account'
+import { AccountsRepository } from './accountsRepository'
+import { Account } from '../entities/account'
 
 let connection: Connection
 

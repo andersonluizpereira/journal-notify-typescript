@@ -1,12 +1,22 @@
 [
     {
-      "name": "default",
+      "name": "default1",
       "type": "postgres",
       "host": "localhost",
       "port": 5432,
       "username": "postgres",
       "password": "root",
       "database": "clean_journal",
+      "entities": ["./src/infra/db/typeorm/entities/**/*.ts"],
+      "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
+      "cli": {
+        "migrationsDir": "./src/infra/db/typeorm/migrations"
+      }
+    },
+    {
+      "name": "default",
+      "type": "sqlite",
+      "database": "clean_journal.sqlite",
       "entities": ["./src/infra/db/typeorm/entities/**/*.ts"],
       "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
       "cli": {
