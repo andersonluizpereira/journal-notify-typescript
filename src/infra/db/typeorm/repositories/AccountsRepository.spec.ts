@@ -123,5 +123,21 @@ describe('AccountsRepository Test', () => {
       expect(account.email).toBe(email)
       expect(account.password).toBe(password)
     })
+    test('Should return an account on loadByToken with if user is admin', async () => {
+      const sut = makeSut()
+      await sut.add({
+        name,
+        email,
+        password,
+        accessToken,
+        role: 'admin'
+      })
+      const account = await sut.loadByToken(accessToken)
+      expect(account).toBeTruthy()
+      expect(account.id).toBeTruthy()
+      expect(account.name).toBe(name)
+      expect(account.email).toBe(email)
+      expect(account.password).toBe(password)
+    })
   })
 })
