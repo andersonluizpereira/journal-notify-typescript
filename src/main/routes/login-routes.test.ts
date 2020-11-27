@@ -52,16 +52,12 @@ describe('Login Routes', () => {
 
   describe('POST /login', () => {
     test('Should return 200 on login', async () => {
-      const salt = 12
       const password = await hash('123', 12)
-      const hashedPassword = await hash(password, salt)
       const accountsRepository = getRepository(Account)
       const fakeUser = accountsRepository.create({
         name: 'Anderson',
         email: 'andy2903.alp@gmail.com',
-        password: hashedPassword,
-        accessToken: hashedPassword,
-        role: 'user'
+        password: password
       })
 
       await accountsRepository.save(fakeUser)
@@ -71,7 +67,7 @@ describe('Login Routes', () => {
           email: 'andy2903.alp@gmail.com',
           password: '123'
         })
-      expect(response.status).toBe(404)
+      expect(response.status).toBe(200)
     })
 
     test('Should return 401 on login', async () => {
@@ -81,7 +77,7 @@ describe('Login Routes', () => {
           email: 'andy2903.alp@gmail.com',
           password: '123'
         })
-        .expect(404)
+        .expect(401)
     })
   })
 })
