@@ -18,8 +18,8 @@ export class Createlogs1601689010416 implements MigrationInterface {
           },
           {
             name: 'dateCreated',
-            type: 'date',
-            default: 'NOW()'
+            type: 'timestamp',
+            default: 'now()'
           }
         ]
       })

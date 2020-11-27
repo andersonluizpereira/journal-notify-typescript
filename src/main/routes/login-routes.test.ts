@@ -2,7 +2,7 @@ import app from '@/main/config/app'
 import request from 'supertest'
 import { Connection, getRepository } from 'typeorm'
 import createConnection from '@/infra/db/typeorm/connection'
-import { Account } from '@/infra/db/typeorm/entities/Account'
+import { Account } from '@/infra/db/typeorm/entities/account'
 import { hash } from 'bcrypt'
 
 let connection: Connection

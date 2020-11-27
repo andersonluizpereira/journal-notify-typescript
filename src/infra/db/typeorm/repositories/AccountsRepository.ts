@@ -25,7 +25,6 @@ implements AddAccountRepository, LoadAccountByEmailRepository, LoadAccountByToke
   }
 
   async add (data: AddAccountParams): Promise<AccountModel> {
-    data.accessToken = data.password
     const account = this.accountsRepository.create(data)
     await this.accountsRepository.save(account)
     const accountModel = (): AccountModel => ({

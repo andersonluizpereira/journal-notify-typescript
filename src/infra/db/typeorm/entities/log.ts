@@ -8,6 +8,6 @@ export class Log {
   @Column()
   stack: string
 
-  @Column()
+  @Column({ nullable: true })
   dateCreated?: Date
 }

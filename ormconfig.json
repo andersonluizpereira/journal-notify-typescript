@@ -1,12 +1,12 @@
 [
     {
-      "name": "default1",
+      "name": "test1",
       "type": "postgres",
       "host": "localhost",
       "port": 5432,
       "username": "postgres",
       "password": "root",
-      "database": "clean_journal",
+      "database": "vaccine_stock",
       "entities": ["./src/infra/db/typeorm/entities/**/*.ts"],
       "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
       "cli": {

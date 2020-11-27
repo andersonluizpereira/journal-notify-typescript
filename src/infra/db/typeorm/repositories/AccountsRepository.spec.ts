@@ -82,13 +82,13 @@ describe('AccountsRepository Test', () => {
     let name = faker.name.findName()
     let email = faker.internet.email()
     let password = faker.internet.password()
-    let role = faker.random.words()
+    let accessToken = faker.random.uuid()
 
     beforeEach(() => {
       name = faker.name.findName()
       email = faker.internet.email()
       password = faker.internet.password()
-      role = faker.random.words()
+      accessToken = faker.random.uuid()
     })
 
     test('Should return an account on loadByToken without role', async () => {
@@ -96,10 +96,10 @@ describe('AccountsRepository Test', () => {
       await sut.add({
         name,
         email,
-        role,
-        password
+        password,
+        accessToken
       })
-      const account = await sut.loadByToken(password)
+      const account = await sut.loadByToken(accessToken)
       expect(account).toBeTruthy()
       expect(account.id).toBeTruthy()
       expect(account.name).toBe(name)

@@ -29,12 +29,13 @@ export class CreateAccounts1601689010415 implements MigrationInterface {
           {
             name: 'accessToken',
             type: 'varchar',
-            default: '0'
+            isNullable: true
           },
           {
             name: 'role',
             type: 'varchar',
-            default: "'user'"
+            default: "'user'",
+            isNullable: true
           }
         ]
       })

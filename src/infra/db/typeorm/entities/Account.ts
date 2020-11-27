@@ -18,5 +18,5 @@ export class Account {
   accessToken?: string
 
   @Column()
-  role: string
+  role?: string
 }
