@@ -21,34 +21,28 @@ describe('Login Routes', () => {
     await connection.close()
   })
 
-  // describe('POST /signup', () => {
-  // test.only('should not be able to authenticate with invalid credentials', async () => {
-  //   await request(app).post('/api/signup').send({
-  //     email: 'andy2903.alp@gmail.com',
-  //     password: '12345678c@'
-  //   }).expect(401)
-  // })
-  // test('Should return 200 on signup', async () => {
-  //   await request(app)
-  //     .post('/api/signup')
-  //     .send({
-  //       name: 'Anderson Pereira',
-  //       email: 'andy2903.alp@gmail.com',
-  //       password: '123',
-  //       passwordConfirmation: '123'
-  //     })
-  //     .expect(200)
-  //   await request(app)
-  //     .post('/api/signup')
-  //     .send({
-  //       name: 'Anderson Pereira',
-  //       email: 'andy2903.alp@gmail.com',
-  //       password: '123',
-  //       passwordConfirmation: '123'
-  //     })
-  //     .expect(403)
-  // })
-  // })
+  describe('POST /signup', () => {
+    test('Should return 200 on signup', async () => {
+      await request(app)
+        .post('/api/signup')
+        .send({
+          name: 'Anderson Pereira',
+          email: 'andy2903.alp@gmail.com',
+          password: '123',
+          passwordConfirmation: '123'
+        })
+        .expect(200)
+      await request(app)
+        .post('/api/signup')
+        .send({
+          name: 'Anderson Pereira',
+          email: 'andy2903.alp@gmail.com',
+          password: '123',
+          passwordConfirmation: '123'
+        })
+        .expect(403)
+    })
+  })
 
   describe('POST /login', () => {
     test('Should return 200 on login', async () => {

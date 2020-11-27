@@ -19,7 +19,8 @@ export class Createlogs1601689010416 implements MigrationInterface {
           {
             name: 'dateCreated',
             type: 'timestamp',
-            default: 'now()'
+            default: 'now()',
+            isNullable: true
           }
         ]
       })
