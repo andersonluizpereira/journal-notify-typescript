@@ -28,7 +28,7 @@ describe('AccountsRepository Test', () => {
   })
 
   describe('create()', () => {
-    it('should be able to insert a new account', async () => {
+    test('should be able to insert a new account', async () => {
       const sut = makeSut()
       const addAccountParams = mockAddAccountParamsModel()
       const account = await sut.add(addAccountParams)
@@ -40,7 +40,7 @@ describe('AccountsRepository Test', () => {
   })
 
   describe('loadByEmail()', () => {
-    it('should return null when email does not exists', async () => {
+    test('should return null when email does not exists', async () => {
       const sut = makeSut()
 
       const account = await sut.loadByEmail(faker.internet.email())
@@ -48,7 +48,7 @@ describe('AccountsRepository Test', () => {
       expect(account).toBeNull()
     })
 
-    it('should return an user by email', async () => {
+    test('should return an user by email', async () => {
       const sut = makeSut()
 
       const accountRepository = getRepository(Account)
