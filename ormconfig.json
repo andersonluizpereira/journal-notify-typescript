@@ -1,26 +1,40 @@
 [
+  {
+    "name": "homolog",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "root",
+    "database": "vaccine_stock",
+    "entities": ["./src/infra/db/typeorm/entities/**/*.ts"],
+    "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
+    "cli": {
+      "migrationsDir": "./src/infra/db/typeorm/migrations"
+    }
+  },
     {
-      "name": "test1",
+      "name": "default",
       "type": "postgres",
       "host": "localhost",
       "port": 5432,
       "username": "postgres",
       "password": "root",
       "database": "vaccine_stock",
-      "entities": ["./src/infra/db/typeorm/entities/**/*.ts"],
-      "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
+      "entities": ["./dist/infra/db/typeorm/entities/**/*.js"],
+      "migrations": ["./dist/infra/db/typeorm/migrations/*.js"],
       "cli": {
-        "migrationsDir": "./src/infra/db/typeorm/migrations"
+        "migrationsDir": "./dist/infra/db/typeorm/migrations"
       }
     },
     {
-      "name": "default",
+      "name": "default1",
       "type": "sqlite",
       "database": "clean_journal.sqlite",
-      "entities": ["./src/infra/db/typeorm/entities/**/*.ts"],
-      "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
+      "entities": ["./dist/infra/db/typeorm/entities/**/*.js"],
+      "migrations": ["./dist/infra/db/typeorm/migrations/*.js"],
       "cli": {
-        "migrationsDir": "./src/infra/db/typeorm/migrations"
+        "migrationsDir": "./dist/infra/db/typeorm/migrations"
       }
     },
     {
