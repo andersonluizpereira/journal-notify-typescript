@@ -1,4 +1,4 @@
-import { mockAuthenticationParams } from '@/data/usecases/add-account/db-add-account-protocols'
+import { mockAuthenticationParams } from '@/data/usecases/account/add-account/db-add-account-protocols'
 import { LoadAccountByEmailRepositorySpy, HashComparerSpy, EncrypterSpy, UpdateAccessTokenRepositorySpy, throwError } from '@/data/test'
 import { DbAuthentication } from './db-authentication'
 
