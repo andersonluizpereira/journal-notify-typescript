@@ -6,7 +6,7 @@
     "port": 5432,
     "username": "postgres",
     "password": "root",
-    "database": "vaccine_stock",
+    "database": "journal",
     "entities": ["./src/infra/db/typeorm/entities/**/*.ts"],
     "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
     "cli": {
@@ -14,13 +14,13 @@
     }
   },
     {
-      "name": "default",
+      "name": "default1",
       "type": "postgres",
       "host": "localhost",
       "port": 5432,
       "username": "postgres",
       "password": "root",
-      "database": "vaccine_stock",
+      "database": "journal",
       "entities": ["./dist/infra/db/typeorm/entities/**/*.js"],
       "migrations": ["./dist/infra/db/typeorm/migrations/*.js"],
       "cli": {
@@ -28,7 +28,7 @@
       }
     },
     {
-      "name": "default1",
+      "name": "default",
       "type": "sqlite",
       "database": "clean_journal.sqlite",
       "entities": ["./dist/infra/db/typeorm/entities/**/*.js"],
