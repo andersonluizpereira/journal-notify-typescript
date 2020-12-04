@@ -14,7 +14,7 @@
     }
   },
     {
-      "name": "default",
+      "name": "default1",
       "type": "postgres",
       "host": "localhost",
       "port": 5432,
@@ -28,7 +28,7 @@
       }
     },
     {
-      "name": "default1",
+      "name": "default",
       "type": "sqlite",
       "database": "clean_journal.sqlite",
       "entities": ["./dist/infra/db/typeorm/entities/**/*.js"],
