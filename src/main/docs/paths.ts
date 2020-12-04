@@ -1,9 +1,11 @@
 import {
   loginPath,
-  signUpPath
+  signUpPath,
+  brandPath
 } from './paths/'
 
 export default {
   '/login': loginPath,
-  '/signup': signUpPath
+  '/signup': signUpPath,
+  '/brands': brandPath
 }
