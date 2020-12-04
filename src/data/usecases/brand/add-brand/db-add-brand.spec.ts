@@ -17,7 +17,6 @@ const makeSut = (): SutTypes => {
 }
 
 describe('DbAddBrand Usecase', () => {
-
   test('Should call AddBrandRepository with correct values', async () => {
     const { sut, addBrandRepositorySpy } = makeSut()
     const brandData = mockAddBrandParams()
