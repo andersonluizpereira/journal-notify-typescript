@@ -6,7 +6,7 @@ export default (app: Express): void => {
   const router = Router()
   app.use('/api', router)
   // eslint-disable-next-line @typescript-eslint/no-floating-promises
-  createConnection().then(async () => {
+  createConnection().then(() => {
     readdirSync(`${__dirname}/../routes`).map(async file => {
       if (!file.includes('.test.') && !file.endsWith('.map')) {
         (await import(`../routes/${file}`)).default(router)

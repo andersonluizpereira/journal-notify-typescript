@@ -21,6 +21,7 @@ export class AuthenticationSpy implements Authentication {
     name: faker.name.findName()
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async auth (authenticationParams: AuthenticationParams): Promise<AuthenticationModel> {
     this.authenticationParams = authenticationParams
     return this.authenticationModel

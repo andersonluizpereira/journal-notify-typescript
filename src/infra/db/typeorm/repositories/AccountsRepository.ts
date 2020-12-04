@@ -5,7 +5,7 @@ import { getRepository, Repository } from 'typeorm'
 import { Account } from '@/infra/db/typeorm/entities/account'
 
 export class AccountsRepository
-implements AddAccountRepository, LoadAccountByEmailRepository, LoadAccountByTokenRepository,UpdateAccessTokenRepository {
+implements AddAccountRepository, LoadAccountByEmailRepository, LoadAccountByTokenRepository, UpdateAccessTokenRepository {
   private readonly accountsRepository: Repository<Account>
 
   constructor () {
