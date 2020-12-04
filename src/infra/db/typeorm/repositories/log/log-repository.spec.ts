@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import createConnection from '../connection'
+import createConnection from '../../connection'
 import { Connection } from 'typeorm'
 import { LogsRepository } from './log-repository'
 import { mockAddLogParamsModel } from '@/domain/test/mock-account/mock-log'

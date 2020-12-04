@@ -1,6 +1,6 @@
 import { LogErrorRepository } from '@/data/protocols/db/log/log-error-repository'
 import { getRepository, Repository } from 'typeorm'
-import { Log } from '../entities/log'
+import { Log } from '../../entities/log'
 
 export class LogsRepository
 implements LogErrorRepository {
