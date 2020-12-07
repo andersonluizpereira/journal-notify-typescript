@@ -9,7 +9,7 @@ describe('LoginValidation Factory', () => {
   test('Should call ValidationComposite with all validations', () => {
     makeAddBrandValidation()
     const validations: Validation[] = []
-    for (const field of ['name', 'title', 'description', 'keywords', 'isActive', 'adWordsRemarketingCode', 'lomadeeCampaignCode']) {
+    for (const field of ['name', 'title', 'description', 'keywords', 'isActive', 'adWordsRemarketingCode', 'lomadeeCampaignCode', 'score', 'linkId']) {
       validations.push(new RequiredFieldValidation(field))
     }
     expect(ValidationComposite).toHaveBeenCalledWith(validations)

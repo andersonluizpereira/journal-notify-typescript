@@ -11,7 +11,9 @@ export const mockBrandModel = (): BrandModel => {
     keywords: faker.random.word(),
     isActive: faker.random.boolean(),
     adWordsRemarketingCode: faker.random.word(),
-    lomadeeCampaignCode: faker.random.word()
+    lomadeeCampaignCode: faker.random.word(),
+    score: faker.random.number(),
+    linkId: faker.random.word()
   }
 }
 
@@ -27,5 +29,7 @@ export const mockAddBrandParams = (): AddBrandParams => ({
   keywords: faker.random.word(),
   isActive: faker.random.boolean(),
   adWordsRemarketingCode: faker.random.word(),
-  lomadeeCampaignCode: faker.random.word()
+  lomadeeCampaignCode: faker.random.word(),
+  score: faker.random.number(),
+  linkId: faker.random.word()
 })

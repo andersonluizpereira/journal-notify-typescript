@@ -45,6 +45,18 @@ export class Createbrands1601689010417 implements MigrationInterface {
             name: 'lomadeeCampaignCode',
             type: 'varchar',
             length: '200'
+          },
+          {
+            name: 'score',
+            type: 'int',
+            default: '0',
+            isNullable: true
+          },
+          {
+            name: 'linkId',
+            type: 'varchar',
+            default: 'null',
+            isNullable: true
           }
         ]
       })

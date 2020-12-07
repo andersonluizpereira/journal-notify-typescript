@@ -13,7 +13,9 @@ const mockRequest = (): HttpRequest => ({
     keywords: faker.random.word(),
     isActive: faker.random.boolean(),
     adWordsRemarketingCode: faker.random.word(),
-    lomadeeCampaignCode: faker.random.word()
+    lomadeeCampaignCode: faker.random.word(),
+    score: faker.random.number(),
+    linkId: faker.random.word()
   }
 })
 

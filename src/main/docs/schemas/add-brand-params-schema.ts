@@ -21,7 +21,13 @@ export const addBrandParamsSchema = {
     },
     lomadeeCampaignCode: {
       type: 'string'
+    },
+    score: {
+      type: 'number'
+    },
+    linkId: {
+      type: 'string'
     }
   },
-  required: ['name', 'title', 'description', 'keywords', 'isActive', 'adWordsRemarketingCode', 'lomadeeCampaignCode']
+  required: ['name', 'title', 'description', 'keywords', 'isActive', 'adWordsRemarketingCode', 'lomadeeCampaignCode', 'score', 'linkId']
 }

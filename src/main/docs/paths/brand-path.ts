@@ -3,7 +3,7 @@ export const brandPath = {
     security: [{
       apiKeyAuth: []
     }],
-    tags: ['Enquete'],
+    tags: ['Marcas'],
     summary: 'API para criar uma marcas',
     description: 'Essa rota só pode ser executada por **administradores**',
     requestBody: {

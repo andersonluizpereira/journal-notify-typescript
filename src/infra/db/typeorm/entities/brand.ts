@@ -25,4 +25,10 @@ export class Brand {
 
   @Column()
   lomadeeCampaignCode: string
+
+  @Column()
+  score?: number
+
+  @Column()
+  linkId?: string
 }

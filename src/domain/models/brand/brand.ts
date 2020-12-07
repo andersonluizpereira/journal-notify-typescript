@@ -7,4 +7,6 @@ export type BrandModel = {
   isActive?: boolean
   adWordsRemarketingCode: string
   lomadeeCampaignCode: string
+  score: number
+  linkId: string
 }

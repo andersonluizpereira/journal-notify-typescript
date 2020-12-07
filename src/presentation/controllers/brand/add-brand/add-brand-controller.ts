@@ -22,7 +22,9 @@ export class AddBrandController implements Controller {
         keywords,
         isActive,
         adWordsRemarketingCode,
-        lomadeeCampaignCode
+        lomadeeCampaignCode,
+        score,
+        linkId
       } = httpRequest.body
       await this.addBrand.add({
         name,
@@ -31,7 +33,9 @@ export class AddBrandController implements Controller {
         keywords,
         isActive,
         adWordsRemarketingCode,
-        lomadeeCampaignCode
+        lomadeeCampaignCode,
+        score,
+        linkId
       })
       return noContent()
     } catch (error) {

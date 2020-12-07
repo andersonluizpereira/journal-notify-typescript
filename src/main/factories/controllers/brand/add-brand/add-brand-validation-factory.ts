@@ -4,7 +4,7 @@ import { ValidationComposite } from '@/validation/validators/validation-composit
 
 export const makeAddBrandValidation = (): ValidationComposite => {
   const validations: Validation[] = []
-  for (const field of ['name', 'title', 'description', 'keywords', 'isActive', 'adWordsRemarketingCode', 'lomadeeCampaignCode']) {
+  for (const field of ['name', 'title', 'description', 'keywords', 'isActive', 'adWordsRemarketingCode', 'lomadeeCampaignCode', 'score', 'linkId']) {
     validations.push(new RequiredFieldValidation(field))
   }
   return new ValidationComposite(validations)
