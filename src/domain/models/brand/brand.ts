@@ -1,5 +1,5 @@
 export type BrandModel = {
-  id: string
+  id?: string
   name: string
   title: string
   description: string
@@ -7,6 +7,6 @@ export type BrandModel = {
   isActive?: boolean
   adWordsRemarketingCode: string
   lomadeeCampaignCode: string
-  score: number
-  linkId: string
+  score?: number
+  linkId?: string
 }

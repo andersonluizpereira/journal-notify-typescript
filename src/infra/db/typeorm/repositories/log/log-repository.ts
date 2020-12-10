@@ -11,7 +11,6 @@ implements LogErrorRepository {
   }
 
   async logError (stack: string): Promise<void> {
-    console.log('stack ', stack)
     const log = this.logsRepository.create({
       stack: stack
     })
