@@ -59,7 +59,6 @@ describe('Brands Routes', () => {
     test('Should return 200 on load brand result with accessToken', async () => {
       const accessToken = await makeAccessToken()
       const brand = await makeCreatedBrand()
-      console.log('brand ', brand.id)
       await request(app)
         .get(`/api/brands/${brand.id}/results`)
         .set('x-access-token', accessToken)
