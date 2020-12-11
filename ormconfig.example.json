@@ -1,0 +1,27 @@
+[
+    {
+      "name": "default",
+      "type": "postgres",
+      "host": "localhost",
+      "port": 5432,
+      "username": "postgres",
+      "password": "docker",
+      "database": "clean_blog",
+      "entities": ["./src/infra/db/typeorm/entities/**/*.ts"],
+      "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
+      "cli": {
+        "migrationsDir": "./src/infra/db/typeorm/migrations"
+      }
+    },
+    {
+      "name": "test",
+      "type": "sqlite",
+      "database": "clean_blog.sqlite",
+      "entities": ["./src/infra/db/typeorm/entities/**/*.ts"],
+      "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
+      "cli": {
+        "migrationsDir": "./src/infra/db/typeorm/migrations"
+      }
+    }
+  ]
+  

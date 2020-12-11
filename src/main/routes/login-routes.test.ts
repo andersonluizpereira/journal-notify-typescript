@@ -1,23 +1,24 @@
 import app from '@/main/config/app'
-import { MongoHelper } from '@/infra/db/mongodb/helpers/mongo-helper'
-import { Collection } from 'mongodb'
-import { hash } from 'bcrypt'
 import request from 'supertest'
+import { Connection, getRepository } from 'typeorm'
+import createConnection from '@/infra/db/typeorm/connection'
+import { Account } from '@/infra/db/typeorm/entities/account'
+import { hash } from 'bcrypt'
 
-let accountCollection: Collection
+let connection: Connection
 
 describe('Login Routes', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(process.env.MONGO_URL)
-  })
-
-  afterAll(async () => {
-    await MongoHelper.disconnect()
+    connection = await createConnection()
   })
 
   beforeEach(async () => {
-    accountCollection = await MongoHelper.getCollection('accounts')
-    await accountCollection.deleteMany({})
+    await connection.query('DELETE FROM accounts')
+  })
+
+  afterAll(async () => {
+    await connection.query('DELETE FROM accounts')
+    await connection.close()
   })
 
   describe('POST /signup', () => {
@@ -46,18 +47,21 @@ describe('Login Routes', () => {
   describe('POST /login', () => {
     test('Should return 200 on login', async () => {
       const password = await hash('123', 12)
-      await accountCollection.insertOne({
-        name: 'Anderson Pereira',
+      const accountsRepository = getRepository(Account)
+      const fakeUser = accountsRepository.create({
+        name: 'Anderson',
         email: 'andy2903.alp@gmail.com',
-        password
+        password: password
       })
-      await request(app)
+
+      await accountsRepository.save(fakeUser)
+      const response = await request(app)
         .post('/api/login')
         .send({
           email: 'andy2903.alp@gmail.com',
           password: '123'
         })
-        .expect(200)
+      expect(response.status).toBe(200)
     })
 
     test('Should return 401 on login', async () => {

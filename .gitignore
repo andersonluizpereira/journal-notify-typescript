@@ -4,3 +4,7 @@ coverage
 data
 !src/data
 .vscode
+clean_test_journal.sqlite
+clean_journal.sqlite
+globanConfig.json
+globalConfig.json

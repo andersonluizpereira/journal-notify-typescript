@@ -1,0 +1,51 @@
+[
+  {
+    "name": "homolog",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "root",
+    "database": "journal",
+    "entities": ["./src/infra/db/typeorm/entities/**/*.ts"],
+    "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
+    "cli": {
+      "migrationsDir": "./src/infra/db/typeorm/migrations"
+    }
+  },
+    {
+      "name": "production",
+      "type": "postgres",
+      "host": "localhost",
+      "port": 5432,
+      "username": "postgres",
+      "password": "root",
+      "database": "journal",
+      "entities": ["./dist/infra/db/typeorm/entities/**/*.js"],
+      "migrations": ["./dist/infra/db/typeorm/migrations/*.js"],
+      "cli": {
+        "migrationsDir": "./dist/infra/db/typeorm/migrations"
+      }
+    },
+    {
+      "name": "default",
+      "type": "sqlite",
+      "database": "clean_journal.sqlite",
+      "entities": ["./dist/infra/db/typeorm/entities/**/*.js"],
+      "migrations": ["./dist/infra/db/typeorm/migrations/*.js"],
+      "cli": {
+        "migrationsDir": "./dist/infra/db/typeorm/migrations"
+      }
+    },
+    {
+      "name": "test",
+      "type": "sqlite",
+      "database": "clean_test_journal.sqlite",
+      "entities": ["./src/infra/db/typeorm/entities/**/*.ts"],
+      "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
+      "cli": {
+        "migrationsDir": "./src/infra/db/typeorm/migrations"
+      }
+    }
+  ]
+  

@@ -1,10 +1,8 @@
-import 'module-alias/register'
-import { MongoHelper } from '@/infra/db/mongodb/helpers/mongo-helper'
 import env from './config/env'
-
-MongoHelper.connect(env.mongoUrl)
-  .then(async () => {
-    const app = (await import('./config/app')).default
-    app.listen(env.port, () => console.log(`Server running at http://localhost:${env.port}`))
-  })
-  .catch(console.error)
+import 'reflect-metadata'
+// import createConnection from '@/infra/db/typeorm/connection'
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+(async () => {
+  const app = (await import('./config/app')).default
+  app.listen(env.port, () => console.log(`Server running at http://localhost:${env.port}`))
+})()
