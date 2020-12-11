@@ -1,5 +1,74 @@
 # Modelo API TDD - Clean Architecture
 
+# RoadMap da estrutura do projeto - referência VTEX
+🟢 Account
+    🟢 GET
+    🟢 POST
+⛔️ brands
+    🟢 GET ById
+    🟢 POST
+    ⛔️ GETAll
+    ⛔️ PUT
+    ⛔️ Delete
+⛔️ Architecture PT1
+    ⛔️ Redis    
+⛔️ categories
+    ⛔️ GET ById
+    ⛔️ POST
+    ⛔️ GETAll
+    ⛔️ PUT
+    ⛔️ Delete
+⛔️ architecture PT2
+    ⛔️ Rabbitmq
+    ⛔️ ELK
+    ⛔️ KEYCLOACK
+⛔️ products
+    ⛔️ GET ById
+    ⛔️ POST
+    ⛔️ GETAll
+    ⛔️ PUT
+    ⛔️ Delete
+⛔️ architecture PT3
+    ⛔️ ELK
+⛔️ skus
+    ⛔️ GET ById
+    ⛔️ POST
+    ⛔️ GETAll
+    ⛔️ PUT
+    ⛔️ Delete
+⛔️ architecture PT4
+    ⛔️ KEYCLOACK
+⛔️ price
+    ⛔️ GET ById
+    ⛔️ POST
+    ⛔️ GETAll
+    ⛔️ PUT
+    ⛔️ Delete
+⛔️ stock
+    ⛔️ GET ById
+    ⛔️ POST
+    ⛔️ GETAll
+    ⛔️ PUT
+    ⛔️ Delete
+⛔️ inventory
+    ⛔️ GET ById
+    ⛔️ POST
+    ⛔️ GETAll
+    ⛔️ PUT
+    ⛔️ Delete
+⛔️ order
+    ⛔️ GET ById
+    ⛔️ POST
+    ⛔️ GETAll
+    ⛔️ PUT
+    ⛔️ Delete
+⛔️ images
+    ⛔️ GET ById
+    ⛔️ POST
+    ⛔️ GETAll
+    ⛔️ PUT
+    ⛔️ Delete
+
 ## Comandos
 | ---------------------------- | --------------------------------- |
 | Comando                      | Descrição                         |
