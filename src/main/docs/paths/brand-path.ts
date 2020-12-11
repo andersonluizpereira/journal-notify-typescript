@@ -17,6 +17,9 @@ export const brandPath = {
       }
     },
     responses: {
+      200: {
+        description: 'Sucesso, exibindo os dados'
+      },
       204: {
         description: 'Sucesso, mas sem dados para exibir'
       },

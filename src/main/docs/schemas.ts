@@ -3,7 +3,8 @@ import {
   loginParamsSchema,
   errorSchema,
   signUpParamsSchema,
-  addBrandParamsSchema
+  addBrandParamsSchema,
+  brandResultSchema
 } from './schemas/'
 
 export default {
@@ -11,5 +12,6 @@ export default {
   loginParams: loginParamsSchema,
   signUpParams: signUpParamsSchema,
   addBrandParams: addBrandParamsSchema,
+  brandResult: brandResultSchema,
   error: errorSchema
 }
