@@ -12,6 +12,7 @@ export default {
   loginParams: loginParamsSchema,
   signUpParams: signUpParamsSchema,
   addBrandParams: addBrandParamsSchema,
+  brands: brandResultSchema,
   brandResult: brandResultSchema,
   error: errorSchema
 }
