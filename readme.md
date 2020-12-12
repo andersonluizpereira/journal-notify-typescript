@@ -7,7 +7,7 @@
 ⛔️ brands
     🟢 GET ById
     🟢 POST
-    ⛔️ GETAll
+    🟢 GETAll
     ⛔️ PUT
     ⛔️ Delete
 ⛔️ Architecture PT1
