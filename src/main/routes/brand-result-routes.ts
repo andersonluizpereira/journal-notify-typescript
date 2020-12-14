@@ -4,5 +4,6 @@ import { makeLoadBrandResultBrandsController } from '../factories/controllers/br
 import { adminAuth } from '../middlewares/admin-auth'
 
 export default (router: Router): void => {
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
   router.get('/brands/:brandId/results', adminAuth, adaptRoute(makeLoadBrandResultBrandsController()))
 }
