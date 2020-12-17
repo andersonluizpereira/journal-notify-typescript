@@ -31,6 +31,17 @@ describe('BrandsRepository', () => {
     })
   })
 
+  describe('removeById()', () => {
+    test('Should remove a brand on success', async () => {
+      const sut = makeSut()
+      await sut.add(mockAddBrandParams())
+      const brandData = await connection.query('select * FROM brands')
+      const brand = await sut.loadById(brandData[0].id)
+      await sut.loadById(brand.id)
+      expect(sut).toBeTruthy()
+    })
+  })
+
   describe('loadAll()', () => {
     test('Should load all brands on success', async () => {
       const sut = makeSut()
@@ -62,6 +73,20 @@ describe('BrandsRepository', () => {
       const brand = await sut.loadById(brandData[0].id)
       expect(sut).toBeTruthy()
       expect(brand.id).toBeTruthy()
+    })
+  })
+  describe('update()', () => {
+    test('Should remove brand by id on success', async () => {
+      const sut = makeSut()
+      await sut.add(mockAddBrandParams())
+      const brandsData = await connection.query('select * FROM brands')
+      var brand = await sut.loadById(brandsData[0].id)
+      brand.name += 'updated'
+      const brandNameOlder = brand.name
+      const brandData = await sut.update(brand)
+      expect(sut).toBeTruthy()
+      expect(brandData.id).toBeTruthy()
+      expect(brandData.name).toBe(brandNameOlder)
     })
   })
 })

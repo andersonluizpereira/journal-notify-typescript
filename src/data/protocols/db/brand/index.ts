@@ -1,1 +1,5 @@
 export * from './add-brand-repository'
+export * from './load-brand-by-id-repository'
+export * from './load-brands-repository'
+export * from './remove-brand-repository'
+export * from './update-brand-repository'

@@ -1,4 +1,4 @@
-import { AddBrandRepository } from '../protocols/db'
+import { AddBrandRepository, RemoveBrandRepository } from '../protocols/db'
 import { AddBrandParams } from '@/domain/usecases/brand/add-brand'
 import { LoadBrandByIdRepository } from '../protocols/db/brand/load-brand-by-id-repository'
 import { BrandModel } from '@/domain/models/brand/brand'
@@ -29,5 +29,13 @@ export class LoadBrandsRepositorySpy implements LoadBrandsRepository {
 
   async loadAll (): Promise<BrandModel[]> {
     return Promise.resolve(this.brandModels)
+  }
+}
+
+export class RemoveBrandRepositorySpy implements RemoveBrandRepository {
+  id: string
+  async removeById (id: string): Promise<void> {
+    this.id = id
+    return Promise.resolve()
   }
 }
