@@ -35,9 +35,9 @@ describe('BrandsRepository', () => {
     test('Should remove a brand on success', async () => {
       const sut = makeSut()
       await sut.add(mockAddBrandParams())
-      const brandData = await connection.query('select * FROM brands')
-      const brand = await sut.loadById(brandData[0].id)
-      await sut.loadById(brand.id)
+      const brandsData = await connection.query('select * FROM brands')
+      const brand = await sut.loadById(brandsData[0].id)
+      await sut.removeById(brand.id)
       expect(sut).toBeTruthy()
     })
   })

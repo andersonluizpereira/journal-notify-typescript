@@ -1,4 +1,4 @@
-import { AddBrandRepository, RemoveBrandRepository } from '../protocols/db'
+import { AddBrandRepository, RemoveBrandRepository, UpdateBrandRespository } from '../protocols/db'
 import { AddBrandParams } from '@/domain/usecases/brand/add-brand'
 import { LoadBrandByIdRepository } from '../protocols/db/brand/load-brand-by-id-repository'
 import { BrandModel } from '@/domain/models/brand/brand'
@@ -37,5 +37,13 @@ export class RemoveBrandRepositorySpy implements RemoveBrandRepository {
   async removeById (id: string): Promise<void> {
     this.id = id
     return Promise.resolve()
+  }
+}
+
+export class UpdateBrandRepositorySpy implements UpdateBrandRespository {
+  brandModel = mockBrandModel()
+  async update (brand: BrandModel): Promise<BrandModel> {
+    this.brandModel = brand
+    return Promise.resolve(this.brandModel)
   }
 }
