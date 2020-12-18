@@ -25,7 +25,6 @@ describe('LoadBrands Controller', () => {
     const { sut, loadBrandsSpy } = makeSut()
     const httpRequest = mockRequest()
     await sut.handle(httpRequest)
-    console.log(httpRequest.body)
     expect(loadBrandsSpy.brandModels.length).toBe(1)
   })
 
