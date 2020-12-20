@@ -1,4 +1,4 @@
-version: "4"
+version: "3"
 services:
   redis:
     container_name: journal_redis
@@ -28,5 +28,3 @@ services:
     ports:
       - "5051:5051"
       - "9222:9222"
-    links:
-      - redis,postgres
