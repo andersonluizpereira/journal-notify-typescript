@@ -4,12 +4,12 @@
 # 🟢 Account
     🟢 GET
     🟢 POST
-# ⛔️ brands
+# 🟢 brands
     🟢 GET ById
     🟢 POST
     🟢 GETAll
-    ⛔️ PUT
-    ⛔️ Delete
+    🟢 PUT
+    🟢 Delete
 # ⛔️ Architecture PT1
     ⛔️ Redis    
 # ⛔️ categories
@@ -20,8 +20,6 @@
     ⛔️ Delete
 # ⛔️ architecture PT2
     ⛔️ Rabbitmq
-    ⛔️ ELK
-    ⛔️ KEYCLOACK
 # ⛔️ products
     ⛔️ GET ById
     ⛔️ POST
