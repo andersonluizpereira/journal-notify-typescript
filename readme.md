@@ -11,7 +11,8 @@
     🟢 PUT
     🟢 Delete
 # 🟢 Architecture PT1
-    🟢 Redis    
+    🟢 Redis
+    🟢 SonarQube    
 # ⛔️ categories
     ⛔️ GET ById
     ⛔️ POST

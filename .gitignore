@@ -4,6 +4,7 @@ coverage
 data
 !src/data
 .vscode
+.scannerwork/
 clean_test_journal.sqlite
 clean_journal.sqlite
 globanConfig.json

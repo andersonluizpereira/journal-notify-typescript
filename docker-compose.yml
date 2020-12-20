@@ -1,5 +1,11 @@
 version: "3"
 services:
+  gen-sonar:
+    image: sonarqube:8.2-community
+    container_name: sonar
+    ports:
+      - 9001:9000
+      - 9092:9092
   redis:
     container_name: journal_redis
     image: redis
