@@ -10,8 +10,8 @@
     🟢 GETAll
     🟢 PUT
     🟢 Delete
-# ⛔️ Architecture PT1
-    ⛔️ Redis    
+# 🟢 Architecture PT1
+    🟢 Redis    
 # ⛔️ categories
     ⛔️ GET ById
     ⛔️ POST
