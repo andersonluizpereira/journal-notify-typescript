@@ -100,7 +100,7 @@ describe('Brands Routes', () => {
   describe('PUT /brands', () => {
     test('Should return 403 on add brand without accessToken', async () => {
       await request(app)
-        .put('/api/brands/update')
+        .put('/api/brands')
         .send({
           id: faker.random.uuid(),
           name: faker.name.findName(),
@@ -120,7 +120,7 @@ describe('Brands Routes', () => {
       const accessToken = await makeAccessToken()
       const brand = await makeBrandCreated()
       await request(app)
-        .put('/api/brands/update')
+        .put('/api/brands')
         .set('x-access-token', accessToken)
         .send({
           id: brand.id,

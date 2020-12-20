@@ -6,7 +6,7 @@ import { adminAuth } from '../middlewares/admin-auth'
 
 export default (router: Router): void => {
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
-  router.get('/brands/:brandId/results', adminAuth, adaptRoute(makeLoadBrandResultBrandsController()))
+  router.get('/brands/:brandId', adminAuth, adaptRoute(makeLoadBrandResultBrandsController()))
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
-  router.delete('/brands/:brandId/remove', adminAuth, adaptRoute(makeRemoveBrandController()))
+  router.delete('/brands/:brandId', adminAuth, adaptRoute(makeRemoveBrandController()))
 }

@@ -9,5 +9,5 @@ import { adminAuth } from '../middlewares/admin-auth'
 export default (router: Router): void => {
   router.get('/brands', adminAuth, adaptRoute(makeLoadBrandsController()))
   router.post('/brands', adminAuth, adaptRoute(makeAddBrandController()))
-  router.put('/brands/update', adminAuth, adaptRoute(makeUpdateBrandController()))
+  router.put('/brands', adminAuth, adaptRoute(makeUpdateBrandController()))
 }

@@ -8,6 +8,6 @@ import {
 export default {
   '/login': loginPath,
   '/signup': signUpPath,
-  '/brands/{brandId}/results': brandResultPath,
+  '/brands/{brandId}': brandResultPath,
   '/brands': brandPath
 }
