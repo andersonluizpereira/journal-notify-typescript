@@ -20,7 +20,7 @@
       "port": 5432,
       "username": "postgres",
       "password": "root",
-      "database": "journal",
+      "database": "journal_vtex",
       "entities": ["./dist/infra/db/typeorm/entities/**/*.js"],
       "migrations": ["./dist/infra/db/typeorm/migrations/*.js"],
       "cli": {

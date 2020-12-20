@@ -44,15 +44,16 @@ describe('Brands Routes', () => {
   const makeBrandCreated = async (): Promise<BrandModel> => {
     const brandsRepository = getRepository(Brand)
     const fakeBrand = brandsRepository.create({
-      name: faker.name.findName(),
-      title: faker.random.word(),
-      description: faker.random.word(),
-      keywords: faker.random.word(),
-      isActive: faker.random.boolean(),
-      adWordsRemarketingCode: faker.random.word(),
-      lomadeeCampaignCode: faker.random.word(),
-      score: faker.random.number(),
-      linkId: faker.random.word()
+      id: '285804bb-e266-44dc-94d0-020ced30978a',
+      name: 'Apple update',
+      title: 'Apple Brasil',
+      description: 'Apple Brasil S.A',
+      keywords: 'Celulares, relógios e afins',
+      isActive: true,
+      adWordsRemarketingCode: 'não possui',
+      lomadeeCampaignCode: 'não possui',
+      score: 10,
+      linkId: 'test'
     })
     await brandsRepository.save(fakeBrand)
     fakeBrand.name += 'updated'
@@ -83,15 +84,15 @@ describe('Brands Routes', () => {
         .post('/api/brands')
         .set('x-access-token', accessToken)
         .send({
-          name: faker.name.findName(),
-          title: faker.random.word(),
-          description: faker.random.word(),
-          keywords: faker.random.word(),
-          isActive: faker.random.boolean(),
-          adWordsRemarketingCode: faker.random.word(),
-          lomadeeCampaignCode: faker.random.word(),
-          score: faker.random.number(),
-          linkId: faker.random.word()
+          name: 'Apple update',
+          title: 'Apple Brasil',
+          description: 'Apple Brasil S.A',
+          keywords: 'Celulares, relógios e afins',
+          isActive: true,
+          adWordsRemarketingCode: 'não possui',
+          lomadeeCampaignCode: 'não possui',
+          score: 10,
+          linkId: 'test'
         })
         .expect(204)
     })
