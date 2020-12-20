@@ -7,7 +7,7 @@ import { makeUpdateBrandController } from '../factories/controllers/brand/update
 import { adminAuth } from '../middlewares/admin-auth'
 
 export default (router: Router): void => {
-  router.post('/brands', adminAuth, adaptRoute(makeAddBrandController()))
-  router.put('/brands', adminAuth, adaptRoute(makeUpdateBrandController()))
   router.get('/brands', adminAuth, adaptRoute(makeLoadBrandsController()))
+  router.post('/brands', adminAuth, adaptRoute(makeAddBrandController()))
+  router.put('/brands/update', adminAuth, adaptRoute(makeUpdateBrandController()))
 }

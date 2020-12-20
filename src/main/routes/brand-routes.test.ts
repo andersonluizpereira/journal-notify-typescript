@@ -7,6 +7,8 @@ import { hash } from 'bcrypt'
 import { Account } from '@/infra/db/typeorm/entities'
 import { sign } from 'jsonwebtoken'
 import env from '../config/env'
+import { Brand } from '@/infra/db/typeorm/entities/brand'
+import { BrandModel } from '@/domain/models/brand/brand'
 let connection: Connection
 
 describe('Brands Routes', () => {
@@ -30,13 +32,31 @@ describe('Brands Routes', () => {
     const accountsRepository = getRepository(Account)
     const fakeUser = accountsRepository.create({
       name: 'Anderson',
-      email: 'andy2903.alp@gmail.com',
+      email: faker.internet.email(),
       password: '123',
       accessToken: accessToken,
       role: 'admin'
     })
     await accountsRepository.save(fakeUser)
     return sign(fakeUser.id, env.jwtSecret)
+  }
+
+  const makeBrandCreated = async (): Promise<BrandModel> => {
+    const brandsRepository = getRepository(Brand)
+    const fakeBrand = brandsRepository.create({
+      name: faker.name.findName(),
+      title: faker.random.word(),
+      description: faker.random.word(),
+      keywords: faker.random.word(),
+      isActive: faker.random.boolean(),
+      adWordsRemarketingCode: faker.random.word(),
+      lomadeeCampaignCode: faker.random.word(),
+      score: faker.random.number(),
+      linkId: faker.random.word()
+    })
+    await brandsRepository.save(fakeBrand)
+    fakeBrand.name += 'updated'
+    return fakeBrand
   }
 
   describe('POST /brands', () => {
@@ -50,7 +70,9 @@ describe('Brands Routes', () => {
           keywords: faker.random.word(),
           isActive: faker.random.boolean(),
           adWordsRemarketingCode: faker.random.word(),
-          lomadeeCampaignCode: faker.random.word()
+          lomadeeCampaignCode: faker.random.word(),
+          score: faker.random.number(),
+          linkId: faker.random.word()
         })
         .expect(403)
     })
@@ -72,6 +94,47 @@ describe('Brands Routes', () => {
           linkId: faker.random.word()
         })
         .expect(204)
+    })
+  })
+
+  describe('PUT /brands', () => {
+    test('Should return 403 on add brand without accessToken', async () => {
+      await request(app)
+        .put('/api/brands/update')
+        .send({
+          id: faker.random.uuid(),
+          name: faker.name.findName(),
+          title: faker.random.word(),
+          description: faker.random.word(),
+          keywords: faker.random.word(),
+          isActive: faker.random.boolean(),
+          adWordsRemarketingCode: faker.random.word(),
+          lomadeeCampaignCode: faker.random.word(),
+          score: faker.random.number(),
+          linkId: faker.random.word()
+        })
+        .expect(403)
+    })
+
+    test('Should return 200 on update brand with valid accessToken', async () => {
+      const accessToken = await makeAccessToken()
+      const brand = await makeBrandCreated()
+      await request(app)
+        .put('/api/brands/update')
+        .set('x-access-token', accessToken)
+        .send({
+          id: brand.id,
+          name: brand.name,
+          title: brand.title,
+          description: brand.description,
+          keywords: brand.keywords,
+          isActive: brand.isActive,
+          adWordsRemarketingCode: brand.adWordsRemarketingCode,
+          lomadeeCampaignCode: brand.lomadeeCampaignCode,
+          score: brand.score,
+          linkId: brand.linkId
+        })
+        .expect(200)
     })
   })
 })

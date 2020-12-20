@@ -65,4 +65,20 @@ describe('Brands Routes', () => {
         .expect(200)
     })
   })
+
+  describe('Delete /brands/:brandId/remove', () => {
+    test('Should return 403 on remove brand result without accessToken', async () => {
+      await request(app)
+        .delete('/api/brands/any_id/remove')
+        .expect(403)
+    })
+    test('Should return 204 on remove brand result with accessToken', async () => {
+      const accessToken = await makeAccessToken()
+      const brand = await makeCreatedBrand()
+      await request(app)
+        .delete(`/api/brands/${brand.id}/remove`)
+        .set('x-access-token', accessToken)
+        .expect(204)
+    })
+  })
 })

@@ -1,6 +1,7 @@
+import { RemoveBrand } from '@/domain/usecases/brand/remove-brand'
 import { ValueInNothingUseError } from '@/presentation/errors'
 import { forbidden, noContent, serverError } from '@/presentation/helpers/http/http-helper'
-import { Controller, HttpRequest, HttpResponse, LoadBrandById, RemoveBrand } from './remove-brand-controller-protocols'
+import { Controller, HttpRequest, HttpResponse, LoadBrandById } from './remove-brand-controller-protocols'
 
 export class RemoveBrandController implements Controller {
   constructor (private readonly removeBrand: RemoveBrand,
