@@ -1,4 +1,5 @@
 export * from './mock-cryptography'
 export * from './mock-db-account'
 export * from './mock-db-brand'
+export * from './mock-db-category'
 export * from './test-helper'
