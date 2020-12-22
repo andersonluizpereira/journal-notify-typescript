@@ -13,8 +13,7 @@ export class LoadBrandResultController implements Controller {
       if (!brand) {
         return forbidden(new InvalidParamError('brandId'))
       }
-      const brandResult = await this.loadBrandResult.load()
-      return ok(brandResult)
+      return ok(brand)
     } catch (error) {
       return serverError(error)
     }

@@ -1,3 +1,6 @@
 export * from './login-path'
 export * from './signup-path'
+export * from './category-path'
+export * from './category-result-path'
 export * from './brand-path'
+export * from './brand-result-path'

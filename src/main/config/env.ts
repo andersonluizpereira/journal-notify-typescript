@@ -1,5 +1,6 @@
 export default {
-  mongoUrl: process.env.MONGO_URL || 'mongodb://localhost:27017/journal',
   port: process.env.PORT || 5051,
-  jwtSecret: process.env.JWT_SECRET || 'tj67O==5H'
+  jwtSecret: process.env.JWT_SECRET || 'tj67O==5H',
+  REDIS_HOST: process.env.REDIS_HOST || 'localhost',
+  REDIS_PORT: process.env.REDIS_PORT || 6379
 }

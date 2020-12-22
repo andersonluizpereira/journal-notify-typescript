@@ -50,20 +50,35 @@ describe('Brands Routes', () => {
     return brand[0]
   }
 
-  describe('GET /brands/:brandId/results', () => {
+  describe('GET /brands/:brandId', () => {
     test('Should return 403 on load brand result without accessToken', async () => {
       await request(app)
-        .get('/api/brands/any_id/results')
+        .get('/api/brands/any_id')
         .expect(403)
     })
     test('Should return 200 on load brand result with accessToken', async () => {
       const accessToken = await makeAccessToken()
       const brand = await makeCreatedBrand()
-      console.log('brand ', brand.id)
       await request(app)
-        .get(`/api/brands/${brand.id}/results`)
+        .get(`/api/brands/${brand.id}`)
         .set('x-access-token', accessToken)
         .expect(200)
+    })
+  })
+
+  describe('Delete /brands/:brandId', () => {
+    test('Should return 403 on remove brand result without accessToken', async () => {
+      await request(app)
+        .delete('/api/brands/any_id')
+        .expect(403)
+    })
+    test('Should return 204 on remove brand result with accessToken', async () => {
+      const accessToken = await makeAccessToken()
+      const brand = await makeCreatedBrand()
+      await request(app)
+        .delete(`/api/brands/${brand.id}`)
+        .set('x-access-token', accessToken)
+        .expect(204)
     })
   })
 })

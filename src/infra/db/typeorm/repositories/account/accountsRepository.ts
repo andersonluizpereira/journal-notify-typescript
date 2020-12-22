@@ -27,13 +27,7 @@ implements AddAccountRepository, LoadAccountByEmailRepository, LoadAccountByToke
   async add (data: AddAccountParams): Promise<AccountModel> {
     const account = this.accountsRepository.create(data)
     await this.accountsRepository.save(account)
-    const accountModel = (): AccountModel => ({
-      id: account.id,
-      name: account.name,
-      email: account.email,
-      password: account.password
-    })
-    return accountModel()
+    return account
   }
 
   async loadByEmail (email: string): Promise<AccountModel | null> {
@@ -42,17 +36,7 @@ implements AddAccountRepository, LoadAccountByEmailRepository, LoadAccountByToke
         email
       }
     })
-    if (account) {
-      const accountModel = (): AccountModel => ({
-        id: account.id,
-        name: account.name,
-        email: account.email,
-        password: account.password,
-        accessToken: account.accessToken
-      })
-      return accountModel()
-    }
-    return null
+    return account || null
   }
 
   async loadByToken (token: string, role?: string): Promise<AccountModel> {

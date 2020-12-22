@@ -60,14 +60,15 @@ describe('LoadBrandResult Controller', () => {
 
   test('Should return 500 if LoadBrandResult throws', async () => {
     const { sut, loadBrandResultSpy } = makeSut()
+    const mockRequestError = (): HttpRequest => ({})
     jest.spyOn(loadBrandResultSpy, 'load').mockImplementationOnce(throwError)
-    const httpResponse = await sut.handle(mockRequest())
+    const httpResponse = await sut.handle(mockRequestError())
     expect(httpResponse).toEqual(serverError(new Error()))
   })
 
   test('Should return 200 on success', async () => {
-    const { sut, loadBrandResultSpy } = makeSut()
+    const { sut, loadBrandByIdSpy } = makeSut()
     const httpResponse = await sut.handle(mockRequest())
-    expect(httpResponse).toEqual(ok(loadBrandResultSpy.brandModels))
+    expect(httpResponse).toEqual(ok(loadBrandByIdSpy.brandModel))
   })
 })

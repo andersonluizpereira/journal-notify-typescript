@@ -5,7 +5,7 @@ import { makeAddBrandValidation } from './add-brand-validation-factory'
 
 jest.mock('@/validation/validators/validation-composite.ts')
 
-describe('LoginValidation Factory', () => {
+describe('BrandAddValidation Factory', () => {
   test('Should call ValidationComposite with all validations', () => {
     makeAddBrandValidation()
     const validations: Validation[] = []
