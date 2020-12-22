@@ -5,7 +5,10 @@ import {
   signUpParamsSchema,
   addBrandParamsSchema,
   updateBrandParamsSchema,
-  brandResultSchema
+  brandResultSchema,
+  addCategoryParamsSchema,
+  updateCategoryParamsSchema,
+  categoryResultSchema
 } from './schemas/'
 
 export default {
@@ -16,5 +19,9 @@ export default {
   updateBrandParams: updateBrandParamsSchema,
   brands: brandResultSchema,
   brandResult: brandResultSchema,
+  addCategoryParams: addCategoryParamsSchema,
+  updateCategoryParams: updateCategoryParamsSchema,
+  categorys: categoryResultSchema,
+  categoryResult: categoryResultSchema,
   error: errorSchema
 }
