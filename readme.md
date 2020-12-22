@@ -13,12 +13,12 @@
 # 🟢 Architecture PT1
     🟢 Redis
     🟢 SonarQube    
-# ⛔️ categories
-    ⛔️ GET ById
-    ⛔️ POST
-    ⛔️ GETAll
-    ⛔️ PUT
-    ⛔️ Delete
+# 🟢 categories
+    🟢 GET ById
+    🟢 POST
+    🟢 GETAll
+    🟢 PUT
+    🟢 Delete
 # ⛔️ architecture PT2
     ⛔️ Rabbitmq
 # ⛔️ products
