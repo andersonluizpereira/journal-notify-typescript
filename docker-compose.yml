@@ -47,10 +47,11 @@ services:
     image: node:12
     working_dir: /usr/src/journal_vtex
     restart: always
-    command: bash -c "npm install --only=production && npm run debug"
+    command: bash -c "npm install --only=production && npm run start"
     volumes:
       - ./dist/:/usr/src/journal_vtex/dist/
       - ./package.json:/usr/src/journal_vtex/package.json
+      - ./ormconfig.json:/usr/src/journal_vtex/ormconfig.json
     ports:
       - "5051:5051"
       - "9222:9222"

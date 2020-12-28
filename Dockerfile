@@ -1,8 +1,9 @@
-FROM node:10.13-alpine
-ENV NODE_ENV production
-WORKDIR /usr/src/app
-COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-RUN npm install --production --silent && mv node_modules ../
+FROM node:12 AS builder
+ENV NODE_ENV default
+WORKDIR /usr/src/journal_vtex
+COPY ["ormconfig.json*","package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
+RUN npm install 
+RUN mv node_modules ../
 COPY . .
-EXPOSE 9222
+EXPOSE 5051
 CMD npm start

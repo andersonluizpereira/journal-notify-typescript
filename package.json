@@ -11,7 +11,7 @@
     "type": "module",
     "dev": "cross-env NODE_ENV=test tsnd -r tsconfig-paths/register --inspect --transpile-only --respawn --ignore-watch node_modules src/main/server.ts",
     "dev:start": "cross-env NODE_ENV=test tsnd -r tsconfig-paths/register --inspect --transpile-only --respawn --ignore-watch node_modules src/main/server.ts",
-    "start": "node dist/main/server.js",
+    "start": "NODE_ENV=default node dist/main/server.js",
     "lint": "eslint 'src/**' --fix",
     "postbuild": "copyfiles -u 1 public/**/* dist/static",
     "debug": "nodemon -L --watch ./dist --inspect=0.0.0.0:9222 --nolazy ./dist/main/server.js",
