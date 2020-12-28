@@ -19,8 +19,8 @@
     🟢 GETAll
     🟢 PUT
     🟢 Delete
-# ⛔️ architecture PT2
-    ⛔️ Rabbitmq
+# 🟢 architecture PT2
+    🟢 Rabbitmq
 # ⛔️ products
     ⛔️ GET ById
     ⛔️ POST
