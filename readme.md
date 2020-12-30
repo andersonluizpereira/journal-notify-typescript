@@ -21,12 +21,12 @@
     🟢 Delete
 # 🟢 architecture PT2
     🟢 Rabbitmq
-# ⛔️ products
-    ⛔️ GET ById
-    ⛔️ POST
-    ⛔️ GETAll
-    ⛔️ PUT
-    ⛔️ Delete
+# 🟢 products
+    🟢 GET ById
+    🟢 POST
+    🟢 GETAll
+    🟢 PUT
+    🟢 Delete
 # ⛔️ architecture PT3
     ⛔️ ELK
 # ⛔️ skus

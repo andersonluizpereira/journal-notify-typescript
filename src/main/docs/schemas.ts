@@ -8,7 +8,10 @@ import {
   brandResultSchema,
   addCategoryParamsSchema,
   updateCategoryParamsSchema,
-  categoryResultSchema
+  categoryResultSchema,
+  addProductParamsSchema,
+  updateProductParamsSchema,
+  productResultSchema
 } from './schemas/'
 
 export default {
@@ -23,5 +26,9 @@ export default {
   updateCategoryParams: updateCategoryParamsSchema,
   categorys: categoryResultSchema,
   categoryResult: categoryResultSchema,
+  addProductParams: addProductParamsSchema,
+  updateProductParams: updateProductParamsSchema,
+  products: productResultSchema,
+  productResult: productResultSchema,
   error: errorSchema
 }
