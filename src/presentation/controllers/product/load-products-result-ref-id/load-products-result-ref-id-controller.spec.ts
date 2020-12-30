@@ -3,7 +3,7 @@ import { InvalidParamError } from '@/presentation/errors/invalid-param-error'
 import { forbidden, ok, serverError } from '@/presentation/helpers/http/http-helper'
 import { LoadProductsByRefIdSpy, LoadProductsSpy } from '@/presentation/test'
 import faker from 'faker'
-import { LoadProductResultController } from './load-products-result-ref-id-controller'
+import { LoadProductResultRefByIdController } from './load-products-result-ref-id-controller'
 import { HttpRequest } from './load-products-result-ref-id-controller-protocols'
 
 const mockRequest = (): HttpRequest => ({
@@ -13,7 +13,7 @@ const mockRequest = (): HttpRequest => ({
 })
 
   type SutTypes = {
-    sut: LoadProductResultController
+    sut: LoadProductResultRefByIdController
     loadProductByRefIdSpy: LoadProductsByRefIdSpy
     loadProductResultSpy: LoadProductsSpy
   }
@@ -21,7 +21,7 @@ const mockRequest = (): HttpRequest => ({
 const makeSut = (): SutTypes => {
   const loadProductByRefIdSpy = new LoadProductsByRefIdSpy()
   const loadProductResultSpy = new LoadProductsSpy()
-  const sut = new LoadProductResultController(loadProductByRefIdSpy, loadProductResultSpy)
+  const sut = new LoadProductResultRefByIdController(loadProductByRefIdSpy, loadProductResultSpy)
   return {
     sut,
     loadProductByRefIdSpy,

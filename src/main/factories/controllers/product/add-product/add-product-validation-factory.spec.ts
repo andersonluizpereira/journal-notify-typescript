@@ -9,7 +9,7 @@ describe('ProductAddValidation Factory', () => {
   test('Should call ValidationComposite with all validations', () => {
     makeAddProductValidation()
     const validations: Validation[] = []
-    for (const field of ['name','departmentId','categoryId','brandId','linkId','refId','isVisible','description','descriptionShort','releaseDate','keyWords','title','isActive','taxCode','metaTagDescription','supplierId','showWithoutStock','adWordsRemarketingCode','lomadeeCampaignCode']) {
+    for (const field of ['name','departmentId','categoryId','brandId','linkId','refId','isVisible','description','descriptionShort','releaseDate','keyWords','title','isActive','taxCode','metaTagDescription','supplierId','showWithoutStock','score']) {
       validations.push(new RequiredFieldValidation(field))
     }
     expect(ValidationComposite).toHaveBeenCalledWith(validations)

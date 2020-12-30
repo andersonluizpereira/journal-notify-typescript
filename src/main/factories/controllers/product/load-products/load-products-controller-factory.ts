@@ -3,7 +3,7 @@ import { makeDbLoadProductResult } from '@/main/factories/usecases/product/load-
 import { LoadProductsController } from '@/presentation/controllers/product/load-products/load-products-controller'
 import { Controller } from '@/presentation/protocols'
 
-export const makeLoadProductssController = (): Controller => {
+export const makeLoadProductsController = (): Controller => {
   const controller = new LoadProductsController(makeDbLoadProductResult())
   return makeLogControllerDecorator(controller)
 }

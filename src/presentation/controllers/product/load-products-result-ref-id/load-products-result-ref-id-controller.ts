@@ -4,7 +4,7 @@ import { Controller, HttpRequest, HttpResponse } from './load-products-result-re
 import { LoadProductRefById } from '@/domain/usecases/product/load-product-by-ref-id'
 import { LoadProducts } from '../load-products/load-products-controller-protocols'
 
-export class LoadProductResultController implements Controller {
+export class LoadProductResultRefByIdController implements Controller {
   constructor (private readonly loadProductRefById: LoadProductRefById,
     private readonly loadProductResult: LoadProducts) {}
 
