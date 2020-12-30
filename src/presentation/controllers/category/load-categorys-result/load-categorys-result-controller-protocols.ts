@@ -1,3 +1,3 @@
 export * from '@/presentation/protocols'
-export * from '@/domain/usecases/brand/load-brand-by-id'
-export * from '@/domain/usecases/brand/load-brands'
+export * from '@/domain/usecases/category/load-category-by-id'
+export * from '@/domain/usecases/category/load-categorys'

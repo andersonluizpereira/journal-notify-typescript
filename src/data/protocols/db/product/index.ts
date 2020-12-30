@@ -1,0 +1,6 @@
+export * from './add-product-repository'
+export * from './load-product-by-id-repository'
+export * from './load-product-by-ref-id-repository'
+export * from './load-products-repository'
+export * from './remove-product-repository'
+export * from './update-product-repository'
