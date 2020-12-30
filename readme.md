@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/andersonluizpereira/journal-notify-typescript/badge.svg?branch=master)](https://coveralls.io/github/andersonluizpereira/journal-notify-typescript?branch=master)
+
 # Modelo API TDD - Clean Architecture
 
 # RoadMap da estrutura do projeto - referência VTEX
