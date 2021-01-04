@@ -15,7 +15,7 @@ const makeSut = () => {
 
 describe('RedisAdapter Test', () => {
   describe('clear()', () => {
-    it('should call RedisClient del with correct value', async () => {
+    test('should call RedisClient del with correct value', async () => {
       const { sut, clientStub } = makeSut()
 
       const clearSpy = jest.spyOn(clientStub, 'del')
@@ -25,7 +25,7 @@ describe('RedisAdapter Test', () => {
       expect(clearSpy).toHaveBeenCalledWith('anykey')
     })
 
-    it('should throw if RedisClient del throws', async () => {
+    test('should throw if RedisClient del throws', async () => {
       const { sut, clientStub } = makeSut()
 
       jest
@@ -37,7 +37,7 @@ describe('RedisAdapter Test', () => {
   })
 
   describe('save()', () => {
-    it('should call RedisClient set with correct values', async () => {
+    test('should call RedisClient set with correct values', async () => {
       const { sut, clientStub } = makeSut()
 
       const setSpy = jest.spyOn(clientStub, 'set')
@@ -49,7 +49,7 @@ describe('RedisAdapter Test', () => {
       expect(setSpy).toHaveBeenCalledWith('anykey', JSON.stringify(data))
     })
 
-    it('should throw if RedisClient set throws', async () => {
+    test('should throw if RedisClient set throws', async () => {
       const { sut, clientStub } = makeSut()
 
       jest
@@ -64,7 +64,7 @@ describe('RedisAdapter Test', () => {
   })
 
   describe('load()', () => {
-    it('should call RedisClient get with correct value', async () => {
+    test('should call RedisClient get with correct value', async () => {
       const { sut, clientStub } = makeSut()
 
       const getSpy = jest.spyOn(clientStub, 'get')
@@ -74,7 +74,7 @@ describe('RedisAdapter Test', () => {
       expect(getSpy).toHaveBeenCalledWith('anykey')
     })
 
-    it('should throw if RedisClient get throws', async () => {
+    test('should throw if RedisClient get throws', async () => {
       const { sut, clientStub } = makeSut()
 
       jest
@@ -84,7 +84,7 @@ describe('RedisAdapter Test', () => {
       await expect(sut.load('anykey')).rejects.toThrow()
     })
 
-    it('should return null if RedisClient returns null', async () => {
+    test('should return null if RedisClient returns null', async () => {
       const { sut, clientStub } = makeSut()
 
       jest.spyOn(clientStub, 'get').mockReturnValueOnce(Promise.resolve(null))
@@ -94,7 +94,7 @@ describe('RedisAdapter Test', () => {
       expect(response).toBeNull()
     })
 
-    it('should return parsed object on success', async () => {
+    test('should return parsed object on success', async () => {
       const { sut, clientStub } = makeSut()
 
       const data = { value: 'anycontent' }

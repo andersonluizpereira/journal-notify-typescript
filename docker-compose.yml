@@ -33,12 +33,10 @@ services:
       - 9001:9000
       - 9092:9092
   redis:
-    container_name: journal_redis
-    image: redis
-    command: redis-server --requirepass local --protected-mode no
-    hostname: redis
+    image: redis:alpine
     ports:
       - 6379:6379
+    container_name: journal_redis
   postgres:
     container_name: journal_database
     image: postgres:11

@@ -39,7 +39,7 @@ const mockMailParams = (): emailParams => ({
 })
 
 describe('NodemailAdapter Test', () => {
-  it('should call Nodemailer sendMail with correct values', async () => {
+  test('should call Nodemailer sendMail with correct values', async () => {
     const { sut, clientStub } = makeSut()
 
     const transportSpy = jest.spyOn(clientStub, 'sendMail')
@@ -49,7 +49,7 @@ describe('NodemailAdapter Test', () => {
     expect(transportSpy).toHaveBeenCalled()
   })
 
-  it('should throw if Nodemailer sendMail throws', async () => {
+  test('should throw if Nodemailer sendMail throws', async () => {
     const { sut, clientStub } = makeSut()
 
     jest
@@ -59,7 +59,7 @@ describe('NodemailAdapter Test', () => {
     await expect(sut.sendEmail(mockMailParams())).rejects.toThrow()
   })
 
-  it('should send an email on success', async () => {
+  test('should send an email on success', async () => {
     const { sut } = makeSut()
 
     await expect(sut.sendEmail(mockMailParams())).resolves
