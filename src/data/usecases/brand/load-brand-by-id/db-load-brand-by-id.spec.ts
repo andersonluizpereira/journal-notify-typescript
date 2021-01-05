@@ -46,7 +46,7 @@ describe('DbLoadBrandById', () => {
     await expect(sut.loadById(brandId)).rejects.toThrow()
   })
 
-  test('should return posts if LoadCache returns posts', async () => {
+  test('should return posts if LoadCache returns brands', async () => {
     const { sut, loadCacheDbStub, loadBrandByIdRepositorySpy } = makeSut()
 
     jest
