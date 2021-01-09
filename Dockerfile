@@ -1,9 +1,10 @@
-FROM node:12 AS builder
-ENV NODE_ENV default
-WORKDIR /usr/src/journal_vtex
-COPY ["ormconfig.json*","package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-RUN npm install 
-RUN mv node_modules ../
+FROM node:14-alpine AS builder
+ENV NODE_ENV production
+WORKDIR /usr/src/journal_vtex/
+COPY package*.json ./
+COPY ormconfig*.json ./
+RUN npm install
+RUN npm install reflect-metadata 
 COPY . .
 EXPOSE 5051
-CMD npm start
+CMD npm run start

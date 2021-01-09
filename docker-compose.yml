@@ -1,4 +1,4 @@
-version: "3"
+version: "3.3"
 services:
   elk:
    image: sebp/elk
@@ -45,17 +45,18 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=journal_vtex
+      - POSTGRES_DB=journal_vtex    
   api:
-    container_name: api-container
-    image: node:12
-    working_dir: /usr/src/journal_vtex
-    restart: always
-    command: bash -c "npm install --only=production && npm run start"
-    volumes:
-      - ./dist/:/usr/src/journal_vtex/dist/
-      - ./package.json:/usr/src/journal_vtex/package.json
-      - ./ormconfig.json:/usr/src/journal_vtex/ormconfig.json
+    container_name: journal_vtex_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    links:
+      - postgres
+      - redis  
+    depends_on:
+      - postgres
+      - redis
     ports:
       - "5051:5051"
       - "9222:9222"
