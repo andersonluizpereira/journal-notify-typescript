@@ -5,6 +5,6 @@ COPY package*.json ./
 COPY ormconfig*.json ./
 RUN npm install
 RUN npm install reflect-metadata 
-COPY . .
+COPY ./dist/ .
 EXPOSE 5051
 CMD npm run start

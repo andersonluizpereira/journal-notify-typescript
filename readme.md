@@ -145,7 +145,7 @@
 * Sucrase
 * Nodemon
 * Rimraf
-* In-Memory MongoDb Server
+* Sqlite
 
 > ## Features abordadas
 
