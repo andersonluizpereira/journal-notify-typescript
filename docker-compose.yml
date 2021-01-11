@@ -51,14 +51,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    env_file:
+      - .env   
+    ports:
+      - "5052:5052"
+      - "9222:9222"
     links:
       - postgres
-      - redis  
-    depends_on:
-      - postgres
       - redis
-    ports:
-      - "5051:5051"
-      - "9222:9222"
 volumes:
   mq_data:
