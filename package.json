@@ -6,6 +6,7 @@
   "author": "Anderson Pereira",
   "license": "ISC",
   "scripts": {
+    "local": "sh ./start.sh",
     "sonar:scanner": "sonar-scanner",
     "build": "rimraf dist && babel src --extensions \".js,.ts\" --out-dir dist",
     "type": "module",
@@ -16,7 +17,7 @@
     "lint": "eslint 'src/**' --fix",
     "postbuild": "copyfiles -u 1 public/**/* dist/static",
     "debug": "nodemon -L --watch ./dist --inspect=0.0.0.0:9222 --nolazy ./dist/main/server.js",
-    "up": "npm run build && docker-compose up",
+    "up": "npm run build && docker-compose up -d",
     "down": "docker-compose down",
     "check": "npm-check -s -u",
     "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
