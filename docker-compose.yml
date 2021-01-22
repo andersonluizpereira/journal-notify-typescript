@@ -1,5 +1,11 @@
-version: "3"
+version: "3.3"
 services:
+  elk:
+   image: sebp/elk
+   ports:
+    - "5601:5601"
+    - "9200:9200"
+    - "5044:5044"
   rabbitmq:    
       build:
         context: .
@@ -27,12 +33,10 @@ services:
       - 9001:9000
       - 9092:9092
   redis:
-    container_name: journal_redis
-    image: redis
-    command: redis-server --requirepass local --protected-mode no
-    hostname: redis
+    image: redis:alpine
     ports:
       - 6379:6379
+    container_name: journal_redis
   postgres:
     container_name: journal_database
     image: postgres:11
@@ -41,19 +45,19 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=journal_vtex
+      - POSTGRES_DB=journal_vtex    
   api:
-    container_name: api-container
-    image: node:12
-    working_dir: /usr/src/journal_vtex
-    restart: always
-    command: bash -c "npm install --only=production && npm run start"
-    volumes:
-      - ./dist/:/usr/src/journal_vtex/dist/
-      - ./package.json:/usr/src/journal_vtex/package.json
-      - ./ormconfig.json:/usr/src/journal_vtex/ormconfig.json
+    container_name: journal_vtex_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env   
     ports:
-      - "5051:5051"
+      - "5052:5052"
       - "9222:9222"
+    links:
+      - postgres
+      - redis
 volumes:
   mq_data:

@@ -14,13 +14,13 @@ const mockQueueParams = (): rabbitmqParams => ({
 })
 
 describe('RabbitmqAdapter Test', () => {
-  it('should call amqplib sendMessage with correct values', async () => {
+  test('should call amqplib sendMessage with correct values', async () => {
     const { sut } = makeSut()
     jest.spyOn(sut, 'publishToQueue')
     const queueName = await sut.publishToQueue(mockQueueParams())
     expect(queueName).toBe(true)
   })
-  it('should call amqplib sendMessage with error values', async () => {
+  test('should call amqplib sendMessage with error values', async () => {
     const { sut } = makeSut()
     jest.spyOn(sut, 'publishToQueue').mockReturnValue(Promise.reject(new Error()))
     await expect(sut.publishToQueue(mockQueueParams())).rejects.toThrow()
