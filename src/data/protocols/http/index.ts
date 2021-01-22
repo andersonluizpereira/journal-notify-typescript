@@ -1,2 +1,5 @@
+export * from './http-delete-client'
+export * from './http-post-client'
 export * from './http-put-client'
+export * from './http-get-client'
 export * from './http-response'
