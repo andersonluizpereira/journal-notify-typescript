@@ -31,7 +31,7 @@
     🟢 PUT
     🟢 Delete
 # 🟢 architecture PT3
-    ⛔️ ELK
+    🟢 ELK
 # ⛔️ skus
     ⛔️ GET ById
     ⛔️ POST
