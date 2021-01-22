@@ -38,8 +38,7 @@
     ⛔️ GETAll
     ⛔️ PUT
     ⛔️ Delete
-# ⛔️ architecture PT4
-    ⛔️ KEYCLOACK
+
 # ⛔️ price
     ⛔️ GET ById
     ⛔️ POST
