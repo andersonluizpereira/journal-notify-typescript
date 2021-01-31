@@ -1,10 +1,10 @@
-export const productPath = {
+export const skuPath = {
   get: {
     security: [{
       apiKeyAuth: []
     }],
-    tags: ['Produtos'],
-    summary: 'API para listar todos os produtos',
+    tags: ['Skus'],
+    summary: 'API para listar todos os skus',
     description: 'Essa rota só pode ser executada por **usuários autenticados**',
     responses: {
       200: {
@@ -14,7 +14,7 @@ export const productPath = {
             schema: {
               type: 'array',
               items: {
-                $ref: '#/schemas/products'
+                $ref: '#/schemas/skus'
               }
             }
           }
@@ -38,15 +38,15 @@ export const productPath = {
     security: [{
       apiKeyAuth: []
     }],
-    tags: ['Produtos'],
-    summary: 'API para criar um produto',
+    tags: ['Skus'],
+    summary: 'API para criar um sku',
     description: 'Essa rota só pode ser executada por **administradores**',
     requestBody: {
       required: true,
       content: {
         'application/json': {
           schema: {
-            $ref: '#/schemas/addProductParams'
+            $ref: '#/schemas/addSkuParams'
           }
         }
       }
@@ -73,15 +73,15 @@ export const productPath = {
     security: [{
       apiKeyAuth: []
     }],
-    tags: ['Produtos'],
-    summary: 'API para atualizar um produto',
+    tags: ['Skus'],
+    summary: 'API para atualizar um sku',
     description: 'Essa rota só pode ser executada por **administradores**',
     requestBody: {
       required: true,
       content: {
         'application/json': {
           schema: {
-            $ref: '#/schemas/updateProductParams'
+            $ref: '#/schemas/updateSkuParams'
           }
         }
       }

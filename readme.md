@@ -32,12 +32,12 @@
     🟢 Delete
 # 🟢 architecture PT3
     🟢 ELK
-# ⛔️ skus
-    ⛔️ GET ById
-    ⛔️ POST
-    ⛔️ GETAll
-    ⛔️ PUT
-    ⛔️ Delete
+# 🟢 skus
+    🟢 GET ById
+    🟢 POST
+    🟢 GETAll
+    🟢 PUT
+    🟢 Delete
 
 # ⛔️ price
     ⛔️ GET ById

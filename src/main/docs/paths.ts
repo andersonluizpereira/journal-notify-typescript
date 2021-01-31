@@ -7,7 +7,10 @@ import {
   categoryPath,
   productResultPath,
   productResultRefIdPath,
-  productPath
+  productPath,
+  skuResultPath,
+  skuResultRefIdPath,
+  skuPath
 } from './paths/'
 
 export default {
@@ -19,5 +22,8 @@ export default {
   '/categorys': categoryPath,
   '/products/{productId}': productResultPath,
   '/products/{refId}/ean': productResultRefIdPath,
-  '/products': productPath
+  '/products': productPath,
+  '/skus/{skuId}': skuResultPath,
+  '/skus/{refId}/ean': skuResultRefIdPath,
+  '/skus': skuPath
 }
