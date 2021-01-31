@@ -15,7 +15,6 @@ export class UpdateProductController implements Controller {
       }
       const products = await this.loadProductById.loadById(httpRequest.body.id)
       if (!products) {
-        console.log(products)
         return forbidden(new ValueInNothingUseError('This product is not found!'))
       }
       const product = await this.updateProduct.update(httpRequest.body)

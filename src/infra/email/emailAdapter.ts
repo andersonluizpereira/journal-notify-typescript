@@ -14,7 +14,6 @@ export class EmailAdapter implements eMail {
       subject,
       html
     })
-
     console.log('Message sent: %s', info.messageId)
     console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info))
   }

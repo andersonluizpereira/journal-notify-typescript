@@ -15,7 +15,6 @@ export class UpdateBrandController implements Controller {
       }
       const brands = await this.loadBrandById.loadById(httpRequest.body.id)
       if (!brands) {
-        console.log(brands)
         return forbidden(new ValueInNothingUseError('This brand is not found!'))
       }
       const brand = await this.updateBrand.update(httpRequest.body)

@@ -15,7 +15,6 @@ export class UpdateCategoryController implements Controller {
       }
       const categorys = await this.loadCategoryById.loadById(httpRequest.body.id)
       if (!categorys) {
-        console.log(categorys)
         return forbidden(new ValueInNothingUseError('This category is not found!'))
       }
       const category = await this.updateCategory.update(httpRequest.body)
